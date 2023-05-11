@@ -1,0 +1,266 @@
+<!doctype html>
+<meta charset="utf-8">
+<script src="https://distill.pub/template.v2.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.4/d3.min.js"
+    integrity="sha512-nfUlp2ZWPKWlnAH/OsMeAqRSYBxOdPYeBXwceyw6QqqZ7uTT/s5/eS1hMKphjVBouk0jf/JQ8ULVJRnEqSHkXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+    integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+    integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+    crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.1.0/+esm'
+</script>
+
+
+<style>
+    .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 3px;
+    }
+
+    .node text {
+        font: 12px sans-serif;
+    }
+
+    .link {
+        fill: none;
+        stroke: #ccc;
+        stroke-width: 2px;
+    }
+    eqn-num {
+        display: none !important;
+    }
+</style>
+<d-front-matter>
+    <script id='distill-front-matter' type="text/json">{
+    "title": "The Many Whys",
+    "description": "An evolutionary approach to root cause analysis.",
+    "published": "May 31 2023",
+    "volume": "1",
+    "authors": [
+      {
+        "author":"Adam Craven",
+        "authorURL":"https://adamcraven.com/",
+        "affiliations": [{"name": "Y-Align", "url":"https://y-align.com"}, {"name": "Principles.dev", "url":"https://principles.dev"}]
+      }
+
+    ],
+    "katex": {
+      "delimiters": [
+      ]
+    }
+  }</script>
+</d-front-matter>
+
+<d-title>
+    <p>Root Cause Analysis (RCA) is a tool used in problem-solving and decision-making processes. This paper examines an
+        evolutionary approach to RCA, referred to as “The Many Whys,&quot;. We focus on the methodology of this new
+        approach, and its advantages over an existing method, “The 5 Whys”</p>
+</d-title>
+
+
+<d-article>
+
+
+
+    <a class="marker" href="#section-1" id="section-1"><span>1</span></a>
+
+    <h2 id="abstract">Abstract</h2>
+    <p>Root Cause Analysis (RCA) is a tool used in problem-solving and decision-making processes. This paper examines an
+        evolutionary approach to RCA, referred to as “The Many Whys,&quot;. We focus on the methodology of this new
+        approach, and its advantages over an existing method, “The 5 Whys”
+
+    </p>
+    <a class="marker" href="#section-2" id="section-2"><span>2</span></a>
+
+    <h2 id="introduction">Introduction</h2>
+    <p>In today&#39;s complex and fast-paced world, effectively identifying and addressing the root causes of problems
+        is a crucial aspect of decision-making processes. Root Cause Analysis (RCA) has traditionally been a valuable
+        tool in this regard. However, conventional RCA methods often fall short when dealing with multifaceted issues,
+        leaving room for improved problem-solving approaches.</p>
+        <a class="marker" href="#section-2.1" id="section-2.1"><span>2.1</span></a>
+
+    <h3 id="background-on-root-causes-analysis">Background on root causes analysis</h3>
+
+
+    <pre class="mermaid l-body">
+    graph TB
+    AP[Apparent Problem]
+    S1[Symptom of problem]
+    S2[Symptom of problem]
+    S3[Symptom of problem]
+    PRC1_1[Possible root cause]
+    PRC1_2[Possible root cause]
+    PRC2_1[Possible root cause]
+    ARC[Actual Root cause]
+    PRC3_1[Possible root cause]
+    PRC3_2[Possible root cause]
+
+    AP-->S1
+    AP-->S2
+    AP-->S3
+    S1-->PRC1_1
+    S1-->PRC1_2
+    S2-->PRC2_1
+    PRC2_1-->ARC
+    S3-->PRC3_1
+    S3-->PRC3_2
+
+  </pre>
+
+    <p>A root cause analysis attempts to find the underlying cause of a problem, that if resolved would solve the
+        problem or issue. It avoids immediately attempting to solve the problem and digs deeper.</p>
+    <a class="marker" href="#section-3" id="section-3"><span>3</span></a>
+
+    <h2 id="problem">Problem</h2>
+    <p>The underlying problem is the limitation of traditional RCA methods, such as the &quot;Five Whys&quot;, in
+        addressing complex issues with multiple causes and diverse branching problems. These methods tend to
+        oversimplify problems and often assume linear and singular causality, leading to incomplete understanding and
+        ineffective solutions. This problem impacts a wide range of industries and sectors, affecting decision-makers
+        who rely on RCA to solve critical issues.</p>
+        <a class="marker" href="#section-3.1" id="section-3.1"><span>3.1</span></a>
+
+    <h3 id="the-five-whys">The problem with '5 Whys'</h3>
+    <p>The five whys is a technique that asks the question “why” 5 or more times.</p>
+
+
+
+    <pre class="mermaid l-body">
+
+    graph TB
+    A[Problem: Our client is refusing to pay for leaflets we printed for him] --> B{Why?}
+    B -->|The delivery was late, so the leaflets couldn't be used| C{Why?}
+    C -->|The job took longer than expected| D{Why?}
+    D -->|We ran out of printer ink| E{Why?}
+    E -->|The ink was all used on a large last-minute order| F{Why?}
+    F -->|Root cause: We didn't have enough ink in stock, and couldn't order new supplies in time| G[Root Cause]</dt-mermaid>
+
+   </pre>
+
+
+    <p>Whilst the 5 Whys is easy to implement without supervision it has many cons <d-cite key="Card2016-mo"></d-cite>
+    </p>
+
+
+    <ul>
+        <li>5 Whys may oversimplify complex problems by often only considering a single root cause</li>
+        <li>Assumes linear causality: The 5 Whys method assumes that problems have linear and singular causes, whereas
+            many issues may have multiple contributing factors and complex relationships between them, that may prevent
+            one from reaching the final cause.</li>
+        <li>Inadequate exploration of branching-related problems: The 5 Whys method does not inherently accommodate the
+            exploration of branching questions that may arise from initial answers. As a result, critical aspects of the
+            problem may remain hidden, as problems are skipped over, leading to an incomplete understanding of the issue
+        </li>
+        <li>The 5 Whys can often stop short of a comprehensive analysis, as stopping at the fifth &quot;why&quot; may
+            not always reveal the true root cause. Even though you don’t need to stop at the fifth why, the naming of
+            the method often constraints. Some problems may require more or fewer &quot;whys&quot; to reach the
+            underlying cause (Dekker, S. (2006). The Field Guide to Understanding Human Error. CRC Press).</li>
+        <li>Limitations due to simplistic questioning: The 5 Whys technique relies on asking the simple question
+            &quot;why,&quot; which may not always be sufficient to explore complex problems. The technique may require
+            clarification or additional probing questions to yield meaningful insights (Kepner, C. H., &amp; Tregoe, B.
+            B. (1965). The rational manager: A systematic approach to problem solving and decision making. New York:
+            McGraw-Hill).
+
+
+        </li>
+    </ul>
+
+    <a class="marker" href="#section-4" id="section-4"><span>4</span></a>
+
+    <h2 id="proposed-solution">Proposed solution</h2>
+<p>This paper introduces the &quot;Many Whys&quot; approach, a evolutionary RCA method developed through consulting practices. This approach enhances the traditional &quot;Five Whys&quot; method by incorporating two additional key questions, &quot;What else?&quot; and &quot;What do you mean?&quot; into the process.</p>
+<p>The &quot;Many Whys&quot; approach allows for a more comprehensive exploration of problem branches and ensures clarity within the team. The process begins with continually asking &quot;Why?&quot; to identify the root cause. However, the addition of the &quot;What else?&quot; question uncovers additional potentially undiscovered answers, enabling multiple avenues of investigation. The &quot;What do you mean?&quot; question ensures clarity and understanding within the team, keeping everyone engaged and aligned in the process.</p>
+    <p>
+        Evidence from the application of this approach suggests that it facilitates a more profound and broader understanding of problems, especially those with multiple causes. It also promotes team engagement and understanding, thus enhancing the overall effectiveness of the problem-solving process.
+    </p>
+    <a class="marker" href="#section-4.1" id="section-4.1"><span>4.1</span></a>
+    <h2 id="how-it-works">How it works</h2>
+
+
+        <h3 id="the-process">The process</h3>
+        <p>1) Ask “why?” - General why</p>
+        <p>2) Ask “why does {cause} create {effect}?” (a why chain) - to chain the whys in a cause an effect chain</p>
+        <p>3) Ask “what else?” zero or more times - to branch the solution</p>
+        <a class="marker" href="#section-4.1.1" id="section-4.1.1"><span>4.1.1</span></a>
+        <p><strong>The why chain</strong> </p>
+
+
+
+
+\begin{equation}Cause + Effect = \text{Why Question}\end{equation}
+
+
+<p>
+The why chain, directly links cause and effect together. It asks why was the cause created in reference to the previous cause.
+
+e.g. Our code base keeps getting rewritten (Cp) → People keep leaving the team (C)
+
+why does  “People leaving the team” cause “Our code base to keep getting rewritten”?</p>
+
+<pre class="mermaid l-screen" style="text-align: center;">
+    graph TB
+    AP[Apparent Problem]
+    P1[Problem 1]
+    P1_1[Problem 1.1]
+    P1_2[Problem 1.2]
+    P1_2_1[Problem 1.2.1]
+    P2[Problem 2]
+    P2_1[Problem 2.1]
+    P2_2[Problem 2.2]
+    P2_1_1[Problem 2.1.1]
+    RC[Root cause]
+    P2_3[Problem 2.3]
+    P3[Problem 3]
+    P3_1[Problem 3.1]
+    P3_2[Problem 3.2]
+
+    AP-->|"Question: Why?"|P1
+    P1-->|"Question: Why?"|P1_1
+    P1-->|"Question: Why does problem 1 cause apparent problem?"|P1_2
+    P1_2-->|"Question: Why does problem 1 cause problem 1.2?"|P1_2_1
+
+    AP-->|"Question: What else?"|P2
+    P2-->|"Question: Why?"|P2_1
+    P2-->|"Question: Why does problem 2 cause apparent problem?"|P2_2
+    P2_2-->|"Question: Why?"|P2_1_1
+    P2_2-->|"Question: Why does problem 2.2 cause problem 2?"|RC
+    P2-->|"Question: What else?"|P2_3
+
+    AP-->|"Question: What else?"|P3
+    P3-->|"Question: Why?"|P3_1
+    P3-->|"Question: Why does problem 3 cause apparent problem?"|P3_2
+
+</pre>
+
+
+    </p>
+
+
+
+
+
+</d-article>
+
+<mind-map></mind-map>
+<d-appendix>
+    <h3>Contributors</h3>
+    <ul>
+        <li>Nicky Hannaway - Initial concept validation</li>
+        <li>Giulia Fabritius, Stephen Wilkinson, Bethanie Murray - Testing and validation</li>
+    </ul>
+    <d-bibliography src="bibliography.bib"></d-bibliography>
+
+</d-appendix>
+
+<script src="./index.js"></script>
