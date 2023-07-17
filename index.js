@@ -243,3 +243,110 @@ function update(source) {
 }
 
 update(root);
+
+// Effectivness
+
+const width = 704;
+const height = 350;
+const margin = { top: 20, right: 5, bottom: 20, left: 5 };
+const chartWidth = width - margin.left - margin.right;
+const chartHeight = height - margin.top - margin.bottom;
+
+const x = d3.scaleLinear().domain([-10, 10]).range([0, chartWidth]);
+const xAxis = d3
+  .axisBottom(x)
+  .tickValues([-8, 0, 8])
+  .tickFormat(function (d) {
+    switch (d) {
+      case -8:
+        return "Proximate causes";
+      case 0:
+        return "Root causes";
+      case 8:
+        return "Distant causes";
+      default:
+        return d;
+    }
+  });
+
+const y = d3.scaleLinear().domain([0, 0.4]).range([chartHeight, 0]);
+
+const yAxis = d3
+  .axisLeft(y)
+  .tickValues([0])
+
+  .tickFormat(function (d) {
+    switch (d) {
+      case 0.05:
+        return "Ineffective at solving problem";
+      case 0.35:
+        return "Effective at solving problem";
+      default:
+        return d;
+    }
+  });
+
+const line = d3
+  .line()
+  .defined((d) => !isNaN(d[1]))
+  .x((d) => x(d[0]))
+  .y((d) => y(d[1]));
+
+const effectivessGraph = d3
+  .select(".lorentzian")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+const chart = effectivessGraph
+  .append("g")
+  .attr("transform", `translate(${margin.left},0)`);
+
+const lorentzian = (x, gamma, x0) => {
+  return (1 / Math.PI) * (gamma / (Math.pow(x - x0, 2) + Math.pow(gamma, 2)));
+};
+
+const points = d3.range(-10, 10, 0.3).map(function (i) {
+  return [i, lorentzian(i, 1, 0) + Math.abs(Math.random() * 0.05 - 0.025)];
+});
+
+const path2 = chart
+  .append("path")
+  .datum(d3.range(-10, 10, 0.01).map((x) => [x, lorentzian(x, 1, 0)]))
+  .attr("fill", "none")
+  .attr("stroke", "black")
+  .attr("d", line);
+
+chart
+  .selectAll(".dot")
+  .data(points)
+  .enter()
+  .append("circle")
+  .attr("class", "dot")
+  .attr("cx", function (d) {
+    return x(d[0]);
+  })
+  .attr("cy", function (d) {
+    return y(d[1]);
+  })
+  .attr("r", 3.5);
+
+chart.append("g").attr("transform", `translate(0,${chartHeight})`).call(xAxis);
+
+chart
+  .append("g")
+  .attr("transform", `translate(135, 0)`)
+  .call(yAxis)
+  .select(".domain")
+  .remove();
+
+// append label on the yaxis
+
+chart
+  .append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -margin.left + 10)
+  .attr("x", -chartHeight / 2)
+  .attr("dy", "1em")
+  .style("text-anchor", "middle")
+  .text("Effectiveness");

@@ -38,6 +38,7 @@
         stroke: #ccc;
         stroke-width: 2px;
     }
+
     eqn-num {
         display: none !important;
     }
@@ -46,9 +47,9 @@
     <script id='distill-front-matter' type="text/json">{
     "title": "Improving '5 Whys' root cause analysis with the Many Whys",
     "description": "An evolutionary approach to root cause analysis.",
-    "published": "May 12 2023",
+    "published": "July 17 2023",
     "volume": "1",
-    "doi": "Draft v0.7",
+    "doi": "Draft v0.8",
     "authors": [
       {
         "author":"Adam Craven",
@@ -80,8 +81,8 @@
     <p>Root Cause Analysis (RCA) is a tool used in problem-solving and decision-making processes. This paper examines an
         evolutionary approach to RCA, referred to as “The Many Whys,&quot;. We focus on the methodology of this new
         approach, and its advantages over an existing method, “The 5 Whys”
-
     </p>
+
     <a class="marker" href="#section-2" id="section-2"><span>2</span></a>
 
     <h2 id="introduction">Introduction</h2>
@@ -89,7 +90,7 @@
         is a crucial aspect of decision-making processes. Root Cause Analysis (RCA) has traditionally been a valuable
         tool in this regard. However, conventional RCA methods often fall short when dealing with multifaceted issues,
         leaving room for improved problem-solving approaches.</p>
-        <a class="marker" href="#section-2.1" id="section-2.1"><span>2.1</span></a>
+    <a class="marker" href="#section-2.1" id="section-2.1"><span>2.1</span></a>
 
     <h3 id="background-on-root-causes-analysis">Background on root causes analysis</h3>
 
@@ -119,9 +120,17 @@
 
   </pre>
 
-    <p>A root cause analysis attempts to find the underlying cause of a problem, that if resolved would solve the
+    <p>A root cause analysis attempts to find the underlying cause of a problem, that if resolved would be the most
+        effective solution the
         problem or issue. It avoids immediately attempting to solve the problem and digs deeper.</p>
+    <div class="lorentzian">
+    </div>
     <a class="marker" href="#section-3" id="section-3"><span>3</span></a>
+    <p>Effective problem-solving tends to follow a lorentzian distribution, such that resolving proximiate causes tend
+        to be ineffective at solving the problem. Whereas, accurate identification of the root cause tends to be very
+        effective at resolivng the problem. Finally, distant causes whilst they objectively may be the ultimate cause as
+        to why a problem
+        exists - such as the fact that the big-bang occured - are ineffective in resolving that problem.</p>
 
     <h2 id="problem">Problem</h2>
     <p>The underlying problem is the limitation of traditional RCA methods, such as the &quot;Five Whys&quot;, in
@@ -129,7 +138,7 @@
         oversimplify problems and often assume linear and singular causality, leading to incomplete understanding and
         ineffective solutions. This problem impacts a wide range of industries and sectors, affecting decision-makers
         who rely on RCA to solve critical issues.</p>
-        <a class="marker" href="#section-3.1" id="section-3.1"><span>3.1</span></a>
+    <a class="marker" href="#section-3.1" id="section-3.1"><span>3.1</span></a>
 
     <h3 id="the-five-whys">The problem with '5 Whys'</h3>
     <p>The five whys is a technique that asks the question “why” 5 or more times.</p>
@@ -149,7 +158,8 @@
    </pre>
 
 
-    <p>Whilst the 5 Whys is easy to implement without supervision it has many cons <d-cite key="Card2016-mo"></d-cite><d-cite key="FiveWhys2007"></d-cite>
+    <p>Whilst the 5 Whys is easy to implement without supervision it has many cons <d-cite
+            key="Card2016-mo"></d-cite><d-cite key="FiveWhys2007"></d-cite>
     </p>
 
 
@@ -179,38 +189,46 @@
     <a class="marker" href="#section-4" id="section-4"><span>4</span></a>
 
     <h2 id="proposed-solution">Proposed solution</h2>
-<p>This paper introduces the &quot;Many Whys&quot; approach, a evolutionary RCA method developed through consulting practices. This approach enhances the traditional &quot;Five Whys&quot; method by incorporating additional questions into the process.</p>
-<p>The &quot;Many Whys&quot; approach allows for a more comprehensive exploration of problem branches and ensures clarity within the team. The process includes asking &quot;Why?&quot; to attempt to identify the root cause. However, the addition of additional questions uncovers potentially undiscovered answers, enabling multiple avenues of investigation. </p>
+    <p>This paper introduces the &quot;Many Whys&quot; approach, a evolutionary RCA method developed through consulting
+        practices. This approach enhances the traditional &quot;Five Whys&quot; method by incorporating additional
+        questions into the process.</p>
+    <p>The &quot;Many Whys&quot; approach allows for a more comprehensive exploration of problem branches and ensures
+        clarity within the team. The process includes asking &quot;Why?&quot; to attempt to identify the root cause.
+        However, the addition of additional questions uncovers potentially undiscovered answers, enabling multiple
+        avenues of investigation. </p>
     <p>
-        Evidence from the application of this approach suggests that it facilitates a more profound and broader understanding of problems, especially those with multiple causes. It also promotes team engagement and understanding, thus enhancing the overall effectiveness of the problem-solving process.
+        Evidence from the application of this approach suggests that it facilitates a more profound and broader
+        understanding of problems, especially those with multiple causes. It also promotes team engagement and
+        understanding, thus enhancing the overall effectiveness of the problem-solving process.
     </p>
     <a class="marker" href="#section-4.1" id="section-4.1"><span>4.1</span></a>
     <h2 id="how-it-works">How it works</h2>
 
 
-        <h3 id="the-process">The process</h3>
-        <p>1) Ask “why?” - General why</p>
-        <p>2) Ask “why does {cause} create {effect}?” (a why chain) - to chain the whys in a cause an effect chain</p>
-        <p>3) Ask “what else?” zero or more times - to branch the solution</p>
-        <a class="marker" href="#section-4.1.1" id="section-4.1.1"><span>4.1.1</span></a>
-        <p><strong>The why chain</strong> </p>
+    <h3 id="the-process">The process</h3>
+    <p>1) Ask “why?” - General why</p>
+    <p>2) Ask “why does {cause} create {effect}?” (a why chain) - to chain the whys in a cause an effect chain</p>
+    <p>3) Ask “what else?” zero or more times - to branch the solution</p>
+    <a class="marker" href="#section-4.1.1" id="section-4.1.1"><span>4.1.1</span></a>
+    <p><strong>The why chain</strong> </p>
 
 
 
 
-\begin{equation}Cause + Effect = \text{Why Question}\end{equation}
+    \begin{equation}Cause + Effect = \text{Why Question}\end{equation}
 
 
-<p>
-The why chain, directly links cause and effect together. It asks why was the cause created in reference to the previous cause.
+    <p>
+        The why chain, directly links cause and effect together. It asks why was the cause created in reference to the
+        previous cause.
 
-e.g. Our code base keeps getting rewritten (Cp) → People keep leaving the team (C)
+        e.g. Our code base keeps getting rewritten (Cp) → People keep leaving the team (C)
 
-why does  “People leaving the team” cause “Our code base to keep getting rewritten”?</p>
+        why does “People leaving the team” cause “Our code base to keep getting rewritten”?</p>
 
 
 
-<pre class="mermaid l-screen" style="text-align: center;">
+    <pre class="mermaid l-screen" style="text-align: center;">
     graph TB
     AP[Apparent Problem]
     P1[Problem 1]
@@ -255,14 +273,16 @@ why does  “People leaving the team” cause “Our code base to keep getting r
 </d-article>
 
 
-<iframe width="90%"  style="height: 100vh; margin: 0 auto; display: block; border:5px solid red; border-bottom:0; border-top:0;" src="https://miro.com/app/live-embed/uXjVMIo9CiU=/?moveToViewport=-3861,-4838,7052,2834&embedId=237601126513" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+<iframe width="90%"
+    style="height: 100vh; margin: 0 auto; display: block; border:5px solid red; border-bottom:0; border-top:0;"
+    src="https://miro.com/app/live-embed/uXjVMIo9CiU=/?moveToViewport=-3861,-4838,7052,2834&embedId=237601126513"
+    frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
 <mind-map></mind-map>
 <d-appendix>
     <h3>Contributors</h3>
     <ul>
         <li>Nicky Hannaway - Initial concept validation</li>
-        <!--li>Giulia Fabritius, Stephen Wilkinson, Bethanie Murray - Testing and validation</li-->
     </ul>
     <d-bibliography src="bibliography.bib"></d-bibliography>
 
